@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/daton89/pm2-ecosystem-boilerplate/issues"
   },
-  "homepage": "https://github.com/daton89/pm2-ecosystem-boilerplate#readme"
+  "homepage": "https://github.com/daton89/pm2-ecosystem-boilerplate#readme",
+  "dependencies": {
+    "pmx": "^1.2.0"
+  },
+  "devDependencies": {
+    "pm2": "^2.4.6"
+  }
 }
