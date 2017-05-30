@@ -9,9 +9,6 @@ http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname
         , filename = path.join(process.cwd(), 'client', uri);
 
-    console.log('uri =>', uri);
-    console.log('filename =>', filename);
-
     var contentTypesByExtension = {
         '.html': "text/html",
         '.css': "text/css",
