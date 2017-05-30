@@ -1,8 +1,19 @@
-var http = require("http"),
-    url = require("url"),
-    path = require("path"),
-    fs = require("fs")
-port = process.argv[2] || 8888;
+const http = require("http");
+const url = require("url");
+const path = require("path");
+const fs = require("fs");
+var pmx = require('pmx');
+const port = process.argv[2] || 8888;
+
+pmx.init({
+    network: true,      // Network monitoring at the application level
+    ports: true,        // Shows which ports your app is listening on (default: false)
+    http: true,         // routes logging enable pm2 to perform http watching for http related metrics
+    errors: true,       // Exceptions logging
+    custom_probes: true // Auto expose JS Loop Latency and HTTP req/s as custom metrics
+});
+
+const Probe = pmx.probe();
 
 http.createServer(function (request, response) {
 
