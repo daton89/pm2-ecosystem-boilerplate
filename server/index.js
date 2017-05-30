@@ -9,6 +9,9 @@ http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname
         , filename = path.join(process.cwd(), uri);
 
+    console.log('uri =>', uri);
+    console.log('filename =>', filename);
+
     var contentTypesByExtension = {
         '.html': "text/html",
         '.css': "text/css",
@@ -23,7 +26,7 @@ http.createServer(function (request, response) {
             return;
         }
 
-        if (fs.statSync(filename).isDirectory()) filename += '/index.html';
+        if (fs.statSync(filename).isDirectory()) filename += 'index.html';
 
         fs.readFile(filename, "binary", function (err, file) {
             if (err) {
