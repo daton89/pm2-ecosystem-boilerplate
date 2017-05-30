@@ -1,0 +1,24 @@
+{
+  "name": "pm2-ecosystem-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ecosystem.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy test setup": "pm2 deploy test setup",
+    "deploy test": "pm2 deploy test",
+    "deploy production setup": "pm2 deploy production setup",
+    "deploy production": "pm2 deploy production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daton89/pm2-ecosystem-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daton89/pm2-ecosystem-boilerplate/issues"
+  },
+  "homepage": "https://github.com/daton89/pm2-ecosystem-boilerplate#readme"
+}
