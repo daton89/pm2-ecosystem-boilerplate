@@ -10,10 +10,16 @@ pmx.init({
     ports: true,        // Shows which ports your app is listening on (default: false)
     http: true,         // routes logging enable pm2 to perform http watching for http related metrics
     errors: true,       // Exceptions logging
-    custom_probes: true // Auto expose JS Loop Latency and HTTP req/s as custom metrics
+    custom_probes: true,// Auto expose JS Loop Latency and HTTP req/s as custom metrics
+    transactions: true, // (default: false) Enable transaction tracing
 });
 
-const Probe = pmx.probe();
+const probe = pmx.probe();
+
+var metric = probe.metric({
+    name: 'Environment',
+    value: () => process.env.NODE_ENV
+});
 
 http.createServer(function (request, response) {
 
