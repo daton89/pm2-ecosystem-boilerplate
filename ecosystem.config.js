@@ -26,7 +26,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'root',
-      host: '10.1.10.5',
+      host: '10.1.10.15',
       ref: 'origin/master',
       repo: 'https://github.com/daton89/pm2-ecosystem-boilerplate.git',
       path: '/root/production/pm2-ecosystem',
@@ -34,7 +34,7 @@ module.exports = {
     },
     test: {
       user: 'root',
-      host: '10.1.10.5',
+      host: '10.1.10.15',
       ref: 'origin/master',
       repo: 'https://github.com/daton89/pm2-ecosystem-boilerplate.git',
       path: '/root/test/pm2-ecosystem',
