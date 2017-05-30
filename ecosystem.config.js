@@ -14,7 +14,8 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: 'production'
-      }
+      },
+      append_env_to_name: true
     }
   ],
 
@@ -37,8 +38,9 @@ module.exports = {
       ref: 'origin/master',
       repo: 'https://github.com/daton89/pm2-ecosystem-boilerplate.git',
       path: '/root/test/pm2-ecosystem',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env test',
+      "pre-setup": "apt-get install git",
       "post-setup": "ls -la",
+      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env test',
       "pre-deploy-local": "echo 'This is a local executed command'",
       env: {
         NODE_ENV: 'test'
